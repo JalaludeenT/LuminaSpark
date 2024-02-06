@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <title>LuminaSpark &mdash; Register</title>
+      <link rel="icon" href="{% static 'Logo/Title Logo.png' %}">
+      <link rel="stylesheet" href="{% static 'Register/register.css' %}">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"></script>
+  </head>
+  <body>
+    <div class="bg-img">
+      <div class="content">
+        <header>Registration Form</header>
+        <form method="post" action="{% url 'BANK:register' %}?log_user={{ request.POST.Username }}">
+            {% csrf_token %}
+            <div class="field">
+                <span class="fas fa-user"></span>
+            <input type="text" placeholder="Username" name="Username" required>
+            </div>
+            <div class="field space">
+                <span class="fas fa-lock"></span>
+            <input type="password" class="pass-key" placeholder="Password" name="Password" required>
+                <span class="show">SHOW</span>
+            </div>
+            <div class="field space">
+                <span class="fas fa-lock"></span>
+            <input type="password" class="c-pass-key" placeholder="Confirm Password" name="Confirm_password" required>
+                <span class="c-show">SHOW</span>
+            </div>
+            {% if messages %}
+                <div class="field-msg" align="center">
+                    {% for message in messages %}
+                        {% if message.tags == 'error' %}
+                            <div class="error-text">
+                                <strong style="color: red;">{{ message }}</strong>
+                            </div>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="pass"></div>
+            <div class="field btn_space">
+                <input type="submit" value="REGISTER">
+            </div>
+            <div class="pass"></div>
+            <div class="signup">You have account?
+                <a href="{% url 'BANK:login' %}">Login Now</a>
+            </div>
+        </form>
+      </div>
+    </div>
+  <script src="{% static 'Register/register.js' %}"></script>
+  </body>
+</html>

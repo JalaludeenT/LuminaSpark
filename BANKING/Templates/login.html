@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>LuminaSpark &mdash; Login</title>
+    <link rel="icon" href="{% static 'Logo/Title Logo.png' %}">
+     <title>Login Form | CodingLab</title>
+    <link rel="stylesheet" href="{% static 'Login/login.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+  </head>
+  <body>
+    <div class="container">
+
+        {% if login_success_flag %}
+
+        <div class="message">
+            <div class="success-message-title">Message</div>
+            <strong class="success-message">
+                Login Successfully ❤️
+            </strong>
+            <div class="button2">
+                <div>
+                    <a href="{% url 'BANK:home' %}">
+                        <button>Back to Home</button>
+                    </a>
+                </div>
+                <div>
+                    <a href="{% url 'BANK:create_account' %}">
+                        <button>Create Account</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            // Check if it's the first time the user has logged in
+            if (!localStorage.getItem('firstTimeLogin')) {
+                // Hide the 'else' part and set the flag in local storage
+                document.querySelector('.wrapper').style.display = 'none';
+                localStorage.setItem('firstTimeLogin', true);
+            }
+        </script>
+
+        {% else %}
+
+
+            <div class="wrapper">
+                <div class="title"><span>Login</span></div>
+                <form method="post" action="{% url 'BANK:login' %}">
+                    {% csrf_token %}
+                    <div class="row">
+                        <i class="fas fa-user"></i>
+                        <input type="text" name="Username" id="id_Username" placeholder="Username" required>
+                    </div>
+                    <div class="row">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" name="Password" id="id_Password" placeholder="Password" required>
+                    </div>
+                    <div>
+                        {% if messages %}
+                        <div class="box-name" align="center">
+                            {% for message in messages %}
+                                <p>{{ message }}</p>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="row button">
+                        <input type="submit" value="Login">
+                    </div>
+                    <div class="signup-link">
+                        <a href="{% url 'BANK:register' %}">Register now</a>
+                    </div>
+                </form>
+            </div>
+
+        {% endif %}
+
+    </div>
+</body>
+</html>

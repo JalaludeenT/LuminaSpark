@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+body{
+  background: linear-gradient(90deg, #c20acad4, #ffcf00cf);
+  overflow: hidden;
+}/*
+::selection{
+  background: rgba(26,188,156,0.3);
+}*/
+.container{
+  max-width: 440px;
+  padding: 0 20px;
+  margin: 170px auto;
+}
+.wrapper {
+  width: 100%;
+  background:  transparent;
+  border-radius: 5px;
+  box-shadow: 0px 4px 20px 20px rgba(0,0,0,0.1);
+}
+.wrapper .title{
+  height: 90px;
+  background: transparent;
+  border-radius: 5px 5px 0 0;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form{
+  padding: 30px 25px 25px 25px;
+}
+.wrapper form .row{
+  height: 45px;
+  margin-bottom: 15px;
+  position: relative;
+}
+.wrapper form .row input{
+  height: 100%;
+  width: 100%;
+  outline: none;
+  padding-left: 60px;
+  border-radius: 5px;
+  border: 1px solid red;
+  background:transparent;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+form .row input:focus{
+  border-color: #16a085;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+.row input:valid{
+  border-color: #16a085;
+  box-shadow: inset 0px 0px 2px 2px rgba(26,188,156,0.25);
+}
+form .row input::placeholder{
+  color: #000;
+}
+.wrapper form .row i{
+  position: absolute;
+  width: 47px;
+  height: 100%;
+  color: #4bff00;
+  font-size: 18px;
+  background: transparent;
+  border: transparent;
+  border-radius: 5px 0 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.wrapper form .pass{
+  margin: -8px 0 20px 0;
+}
+.wrapper form .pass a{
+  color: #16a085;
+  font-size: 17px;
+  text-decoration: none;
+}
+.wrapper form .pass a:hover{
+  text-decoration: underline;
+}
+.wrapper form .button input{
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  padding-left: 0px;
+  background: linear-gradient(90deg, #ffcf00cf, #c20acad4);
+  cursor: pointer;
+}
+form .button input:hover{
+  background: linear-gradient(90deg, #c20acad4, #ffcf00cf);
+}
+.wrapper form .signup-link{
+  text-align: center;
+  margin-top: 20px;
+  font-size: 17px;
+}
+.wrapper form .signup-link a{
+  color: #000;
+  text-decoration: none;
+}
+form .signup-link a:hover{
+  text-decoration: underline;
+}
+.box-name{
+color:red;
+margin-bottom:10px;
+}
+
+
+.message {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: transparent;
+  border-radius: 8px;
+  box-shadow: 0 0 20px 20px rgb(0 0 0 / 12%);
+  padding: 20px;
+  text-align: center;
+}
+
+.success-message-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.success-message {
+  font-size: 20px;
+  color: #ffffff;
+  margin: 10px 0;
+}
+
+.button2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.button2 a {
+  text-decoration: none;
+}
+
+button {
+  background: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #0056b3;
+}

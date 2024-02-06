@@ -1,0 +1,101 @@
+/* Account/account_details.css */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins',sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins',sans-serif;
+    background-color: #b0f704;
+}
+
+.container {
+    width: 70%;
+    margin: 50px auto;
+    background:transparent;
+    padding: 20px;
+    box-shadow: 0 0 20px 20px rgb(0 0 0 / 28%);
+    border-radius:10px;
+    position: relative;
+}
+
+.container a:hover {
+    color: #ff0000;
+}
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.image {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.image img {
+    width: 220px;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 50%;
+    padding:30px;
+    margin-right:50px;
+    margin-bottom:10px;
+}
+
+.field-details {
+    width: calc(48% - 10px);
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+.field-details strong {
+    display: block;
+    font-weight: revert;
+    color:#0016ff;
+}
+
+.field-details label {
+    display: block;
+    margin-top: 5px;
+    color:#000000;
+    padding:1px 15px;
+}
+
+.materials {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.materials-title {
+    font-weight: revert;
+    margin-bottom: 10px;
+    color:#0016ff;
+}
+
+.materials-list ul {
+    list-style-type: none;
+    padding: 10px;
+}
+
+
+.materials-list li {
+    margin-bottom: 10px;
+    color: #000;
+}
+.materials-list li strong {
+    margin-right: 5px;
+    color: #000;
+}

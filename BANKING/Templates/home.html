@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+       <title>LuminaSpark &mdash; Home</title>
+       <link rel="icon" href="{% static 'Logo/Title Logo.png' %}">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'Home/css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'Home/css/style.css' %}">
+      <!-- responsive-->
+      <link rel="stylesheet" href="{% static 'Home/css/responsive.css' %}">
+      <!-- awesome fontfamily -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+<!--       loader-->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'Home/images/loading.gif' %}" alt="" /></div>
+      </div>
+<!--       end loader-->
+      <div id="mySidepanel" class="sidepanel">
+         <a href="" class="closebtn" onclick="closeNav()">×</a>
+         <a class="active" href="#">Home</a>
+          {% if user.is_authenticated %}
+            <a class="" href="{% url 'BANK:create_account' %}">Account</a>
+            <a class="" href="{% url 'BANK:logout' %}">Logout</a>
+          {% else %}
+          <a class="" href="{% url 'BANK:register' %}">Register</a>
+         <a class="" href="{% url 'BANK:login' %}">Login</a>
+          {% endif %}
+         <a href="{% url 'BANK:locations' %}">Branches</a>
+          <a href="#locations">Locations</a>
+          <a href="#endorsement">Endorsement</a>
+          <a href="#latest_news">Latest News</a>
+          <a href="#contact">Contact Us</a>
+      </div>
+      <div class="top_main">
+      <div class="head_top">
+      <!-- header -->
+      <header>
+          <!-- header inner -->
+          <div class="header">
+              <div class="logo">
+                  <a href="#">Lumina</a>
+                  <a href="#">Spark</a>
+              </div>
+          </div>
+              <ul class="email text_align_right">
+                  <li> <button class="openbtn" onclick="openNav()"><img src="{% static 'Home/images/menu_btn.png' %}"></button></li>
+              </ul>
+      </header>
+    </div>
+      <!-- end header -->
+      <!-- start slider section -->
+      <div class="right_main">
+        <div  class=" banner_main">
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="container">
+                              <div class="carousel-caption relative">
+                                <div class="row">
+                                   <div class="col-lg-5">
+                                     <div class="bluid">
+                                      <h1>Lumina <br><span>Spark
+                                      </span></h1>
+                                      <p>Experience seamless financial brilliance with Lumina Spark, your trusted banking companion.</p>
+                                         {% if user.is_authenticated %}
+                                         <a class="read_more" href="{% url 'BANK:create_account' %}">Account</a>
+                                         <a class="read_more" href="{% url 'BANK:logout' %}">Logout</a>
+                                         {% else %}
+                                         <a class="read_more" href="{% url 'BANK:register' %}">Register </a>
+                                         <a class="read_more" href="{% url 'BANK:login' %}">Login</a>
+                                         {% endif %}
+                                     </div>
+                                   </div>
+                                   <div class="col-lg-7">
+                                      <div class="pan_img ">
+                                         <figure class="my-img"><img src="{% static 'Home/images/frond-1.png' %}" alt="#"/></figure>
+                                      </div>
+                                   </div>
+                                </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption relative">
+                               <div class="row">
+                                   <div class="col-lg-5">
+                                     <div class="bluid">
+                                      <h1>Lumina <br><span>Spark
+                                      </span></h1>
+                                      <p>Absolutely! Lumina Spark combines user-friendly design with powerful efficiency, ensuring a hassle-free banking experience tailored just for you..</p>
+                                         {% if user.is_authenticated %}
+                                         <a class="read_more" href="{% url 'BANK:create_account' %}">Account</a>
+                                         <a class="read_more" href="{% url 'BANK:logout' %}">Logout</a>
+                                         {% else %}
+                                         <a class="read_more" href="{% url 'BANK:register' %}">Register </a>
+                                         <a class="read_more" href="{% url 'BANK:login' %}">Login</a>
+                                         {% endif %}
+                                     </div>
+                                   </div>
+                                   <div class="col-lg-7">
+                                      <div class="pan_img">
+                                         <figure><img src="{% static 'Home/images/frond-2.png' %}" alt="#"/></figure>
+                                      </div>
+                                   </div>
+                                </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="carousel-item">
+                           <div class="container">
+                              <div class="carousel-caption relative">
+                                <div class="row">
+                                   <div class="col-lg-5">
+                                     <div class="bluid">
+                                      <h1>Lumina <br><span>Spark
+                                      </span></h1>
+                                      <p>Lumina Spark offers not just banking, but a financial spark, providing cutting-edge features and secure transactions to illuminate your banking experience.</p>
+                                         {% if user.is_authenticated %}
+                                         <a class="read_more" href="{% url 'BANK:create_account' %}">Account</a>
+                                         <a class="read_more" href="{% url 'BANK:logout' %}">Logout</a>
+                                         {% else %}
+                                         <a class="read_more" href="{% url 'BANK:register' %}">Register </a>
+                                         <a class="read_more" href="{% url 'BANK:login' %}">Login</a>
+                                         {% endif %}
+                                     </div>
+                                   </div>
+                                   <div class="col-lg-7">
+                                      <div class="pan_img">
+                                         <figure><img src="{% static 'Home/images/frond-3.jpg' %}" alt="#"/></figure>
+                                      </div>
+                                   </div>
+                                </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+                     <i class="fa fa-angle-left" aria-hidden="true"></i>
+                     <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+                     <i class="fa fa-angle-right" aria-hidden="true"></i>
+                     <span class="sr-only">Next</span>
+                     </a>
+                  </div>
+        </div>
+      <!-- end slider section -->
+      <!-- locations -->
+          <div class="locations padd_rl30" id="locations">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_left">
+                     <h2>LOCATIONS</h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-4">
+                  <div class="bearch text_align_left">
+                    <figure><img src="{% static 'Home/images/TVM-1.jpg' %}" alt="#"/></figure>
+                    <div class="city">
+                    <h3>Trivandrum</h3>
+                    <p>Thiruvananthapuram district is located between 8.17°N 76.41°E and 8.54°N 77.17°E. At the southernmost extremity of the district, Kaliyikkavila is 54 kilometres (34 mi) from Kanyakumari.</p>
+                    </div>
+                  </div>
+                  <a class="read_more" href="/locations/#Thiruvananthapuram">Read More</a>
+               </div>
+               <div class="col-lg-4">
+                  <div class="bearch text_align_left">
+                    <figure><img src="{% static 'Home/images/Ernakulam-1.jpg' %}" alt="#"/></figure>
+                    <div class="city">
+                    <h3>Ernakulam </h3>
+                    <p>The Ernakulam District is situated in Central Kerala in India. Ernakulam is located at the geographic coordinates of 9°58′53.8″N 76°17′59.6″E and at an elevation of 22.36 m (73.4 ft) above the mean sea level.</p>
+                    </div>
+                  </div>
+                  <a class="read_more" href="/locations/#Pathanamthitta">Read More</a>
+               </div>
+               <div class="col-lg-4">
+                  <div class="bearch text_align_left">
+                    <figure><img src="{% static 'Home/images/idukki-1.jpg' %}" alt="#"/></figure>
+                    <div class="city">
+                    <h3>Idukki</h3>
+                    <p>Idukki is one of the 14 districts in the Indian state of Kerala in the southwest of the country. It is the largest district in Kerala and lies amid the Cardamom Hills of Western Ghats in Kerala.</p>
+                    </div>
+                  </div>
+                  <a class="read_more" href="/locations/#Idukki">Read More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end locations -->
+       <!-- clients -->
+      <div class="clients padd_rl30" id="endorsement">
+        <div class="container">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="titlepage text_align_center">
+                <h2>Endorsement</h2>
+              </div>
+            </div>
+          </div>
+         </div>
+         <!-- start slider section -->
+         <div id="testi" class="carousel slide clients_banner" data-ride="carousel">
+            <ol class="carousel-indicators">
+               <li data-target="#testi" data-slide-to="0" class="active"></li>
+               <li data-target="#testi" data-slide-to="1"></li>
+               <li data-target="#testi" data-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                  <div class="container">
+                     <div class="carousel-caption testi">
+                        <div class="row d_flex">
+                           <div class="col-md-3">
+                              <div class="pro_file">
+                                 <i><img class="text_align_right" src="{% static 'Home/images/Endorsement-1.jpg' %}" alt="#"/></i>
+                              </div>
+                           </div>
+                           <div class="col-md-9">
+                              <div class="test_box text_align_left">
+                                 <h4>Revolutionizing Banking</h4>
+                                 <p>Embracing the seamless synergy of cutting-edge technology and personalized financial services, our banking experience has been nothing short of transformative, as the institution's unwavering commitment to security, innovation, and customer-centricity has not only optimized our financial management but also elevated our confidence in navigating the dynamic landscape of modern banking with unparalleled ease and trust.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption testi">
+                        <div class="row d_flex">
+                           <div class="col-md-3">
+                              <div class="pro_file">
+                                 <i><img class="text_align_right" src="{% static 'Home/images/Endorsement-1.jpg' %}" alt="#"/></i>
+                              </div>
+                           </div>
+                           <div class="col-md-9">
+                              <div class="test_box text_align_left">
+                                 <h4>Revolutionizing Banking</h4>
+                                 <p>Embracing the seamless synergy of cutting-edge technology and personalized financial services, our banking experience has been nothing short of transformative, as the institution's unwavering commitment to security, innovation, and customer-centricity has not only optimized our financial management but also elevated our confidence in navigating the dynamic landscape of modern banking with unparalleled ease and trust.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <div class="container">
+                     <div class="carousel-caption testi">
+                        <div class="row d_flex">
+                           <div class="col-md-3">
+                              <div class="pro_file">
+                                 <i><img class="text_align_right" src="{% static 'Home/images/Endorsement-1.jpg' %}" alt="#"/></i>
+                              </div>
+                           </div>
+                           <div class="col-md-9">
+                              <div class="test_box text_align_left">
+                                 <h4>Revolutionizing Banking</h4>
+                                 <p>Embracing the seamless synergy of cutting-edge technology and personalized financial services, our banking experience has been nothing short of transformative, as the institution's unwavering commitment to security, innovation, and customer-centricity has not only optimized our financial management but also elevated our confidence in navigating the dynamic landscape of modern banking with unparalleled ease and trust.</p>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <a class="carousel-control-prev" href="#testi" role="button" data-slide="prev">
+            <i class="fa fa-angle-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#testi" role="button" data-slide="next">
+            <i class="fa fa-angle-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+            </a>
+         </div>
+      </div>
+      <!-- end clients -->
+      <!-- news -->
+      <div class="news padd_rl30" id="latest_news">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage text_align_left">
+                     <h2>Latest <span>News</span></h2>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6">
+                  <div class="latest text_align_left">
+                    <figure><img src="{% static 'Home/images/news-1.png' %}" alt="#"/></figure>
+                    <div class="dist">
+                    <h3>India's Budget & CLOWD9's Open Banking</h3>
+                    <p>The latest banking updates reveal that fintech is poised to enhance financial inclusivity and redefine interactions with financial services, India's upcoming interim budget is anticipated to focus on essential government expenditures as a strategic pause for stakeholders to reassess amidst the evolving landscape, and CLOWD9 has forged an open banking partnership with Ozone API, according to reports from the Daily Pioneer.</p>
+                    </div>
+                  </div>
+                  <a class="read_more" href="https://www.dailypioneer.com/2024/columnists/the-rise-of-digital-banking--fintech-trends-in-2024.html">Read More</a>
+               </div>
+               <div class="col-lg-6">
+                  <div class="latest text_align_left">
+                    <figure><img src="{% static 'Home/images/news-2.png' %}" alt="#"/></figure>
+                    <div class="dist">
+                    <h3>Global Concerns in Corruption and Justice</h3>
+                    <p>Transparency International's 2023 Corruption Perceptions Index (CPI) underscores a troubling global trend with over two-thirds of 180 countries scoring below 50, signaling minimal progress in combating public sector corruption and a concerning connection between low scores in access to justice and corruption levels, as reported on Tuesday.The Rule of Law Index indicates a global decline in justice system functionality,consequences for wrongdoers.</p>
+                    </div>
+                  </div>
+                  <a class="read_more" href="https://www.msn.com/en-in/news/other/india-ranks-93-in-global-corruption-index-list-of-most-least-corrupt-nations/ar-BB1hww6w">Read More</a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end news -->
+      <!-- footer -->
+      <footer>
+         <div class="footer padd_rl30" id="contact">
+            <div class="container">
+               <div class="row">
+
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="Informa helpful">
+                        <h3>Menu</h3>
+                        <ul>
+                            <li><a href="{% url 'BANK:home' %}">Home</a></li>
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'BANK:create_account' %}">Account</a></li>
+                            <li><a href="{% url 'BANK:logout' %}">Logout</a></li>
+                            {% else %}
+                           <li><a href="{% url 'BANK:register' %}">Register</a></li>
+                           <li><a href="{% url 'BANK:login' %}">Login</a></li>
+                            {% endif %}
+                           <li><a href="{% url 'BANK:locations' %}">Branches</a></li>
+                        </ul>
+                     </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="Informa conta">
+                        <h3>Location</h3>
+                        <ul>
+                           <li>
+                               <a href="https://www.google.com/maps/place/Thiruvananthapuram,+Kerala/@8.499733,76.9241666,12z/data=!3m1!4b1!4m6!3m5!1s0x3b05bbb805bbcd47:0x15439fab5c5c81cb!8m2!3d8.5241391!4d76.9366376!16zL20vMGZrOTg?entry=ttu">
+                               <img src="{% static 'Home/images/loc.png' %}" alt="#"/>   Kerala TVM </a>
+                           </li>
+                           <li> <a href="#"><img src="{% static 'Home/images/call.png' %}" alt="#"/> +91 6958247884 </a></li>
+                           <li> <a href="https://mail.google.com/"> <img src="{% static 'Home/images/mail.png' %}" alt="#"/> jalal@gmail.com</a></li>
+                        </ul>
+                     </div>
+                  </div>
+
+                  <div class="col-lg-3 col-md-6 col-sm-6">
+                     <div class="Informa conta">
+                        <h3>Social Link</h3>
+                       <ul class="social_icon text_align_center">
+                        <li> <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"></i></a></li>
+                        <li> <a href="https://twitter.com/?lang=en-in"><i class="fa fa-twitter"></i></a></li>
+                        <li> <a href="https://www.linkedin.com/login"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a></li>
+                        <li> <a href="https://www.instagram.com/?hl=en"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                     </ul>
+                     </div>
+
+                  </div>
+                   <div class="col-lg-3 col-md-6 col-sm-6">
+                      <div class="Informa helpful search-bar">
+                        <h3>Search letters</h3>
+                         <form class="newslatter_form" id="searchForm">
+                        <input class="ente " placeholder="Search Anything..." type="text" name="Enter your email" id="searchInput">
+                        <button class="subs_btn" type="submit">Search</button>
+                     </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="copyright text_align_center">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-10 offset-md-1">
+                        <p>© 2024 All Rights Reserved. Design by  <a href="https://github.com/JalaludeenT"> Jalaludeen T</a></p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+       </div>
+     </div>
+      <!-- end footer -->
+      <!-- Javascript files-->
+      <script src="{% static 'Home/js/jquery.min.js' %}"></script>
+      <script src="{% static 'Home/js/bootstrap.bundle.min.js' %}"></script>
+      <script src="{% static 'Home/js/jquery-3.0.0.min.js' %}"></script>
+      <script src="{% static 'Home/js/custom.js' %}"></script>
+      <script src="{% static 'Home/js/search.js' %}"></script>
+
+
+   </body>
+</html>

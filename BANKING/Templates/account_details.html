@@ -1,0 +1,84 @@
+<!-- Account/account_details.html -->
+
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LuminaSpark &mdash; Account Details</title>
+    <link rel="icon" href="{% static 'Logo/Title Logo.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'Account/css/account_details.css' %}">
+</head>
+
+<body>
+
+    <div class="container" onclick="changeTileColor(this)">
+        <a href="{% url 'BANK:profile' account_id=account.id %}"><i class="fas fa-arrow-left"></i></a>
+        <div class="title" onclick="changeColor()">Account Details</div>
+        <div class="image">
+            <img src="{{ account.profile_image.url }}">
+        </div>
+        <div class="fields">
+            <div class="field-details">
+                <strong>Name:</strong>
+                <label>{{ account.name }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Date of Birth:</strong>
+                <label>{{ account.date_of_birth }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Age:</strong>
+                <label>{{ account.age }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Gender:</strong>
+                <label>{{ account.gender }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Phone Number:</strong>
+                <label>{{ account.phone_number }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Email:</strong>
+                <label>{{ account.mail_id }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Address:</strong>
+                <label>{{ account.address }}</label>
+            </div>
+            <div class="field-details">
+                <strong>District:</strong>
+                <label>{{ account.district }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Branch:</strong>
+                <label>{{ account.branch }}</label>
+            </div>
+            <div class="field-details">
+                <strong>Account Type:</strong>
+                <label>{{ account.account_type }}</label>
+            </div>
+
+            <div class="materials">
+                <strong class="materials-title">Materials Provided:</strong>
+                <div class="materials-list">
+                    <ul>
+                        {% for material in account.materials_provide.all %}
+                        <li><strong>•  </strong>{{ material.materials }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+<script src="{% static 'Profile/js/profile.js' %}"></script>
+</body>
+
+</html>
